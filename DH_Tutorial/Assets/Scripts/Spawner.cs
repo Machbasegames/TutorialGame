@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour
             GameObject newShit = GameObject.Instantiate<GameObject>(shitPrefab);
 
             newShit.transform.position = new Vector3(Random.Range(-4f, 4f), transform.position.y, 0f);
+            newShit.transform.parent = transform;
 
             yield return new WaitForSeconds(autoGeneratorCycleSeconds);
         }
